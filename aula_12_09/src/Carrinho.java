@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Carrinho {
     private Client dono;
     private ArrayList<Product> products;
-    private float totalPrice;
+    private Float totalPrice = 0f;
 
     public Carrinho() {
         this.products = new ArrayList<>();
@@ -28,19 +28,13 @@ public class Carrinho {
         this.dono = dono;
     }
 
-    public void setTotalPrice() {
-        float price = 0;
-        for(int i = 0; i < this.products.size(); i++){
-            price += this.products.get(i).getPrice();
-        }
-        this.totalPrice = price;
-    }
-
     public void addItem(Product item){
         products.add(item);
+        totalPrice += item.getPrice();
     }
 
     public void removeItem(Product item){
         products.remove(item);
+        totalPrice -= item.getPrice();
     }
 }

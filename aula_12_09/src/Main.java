@@ -2,7 +2,7 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        Product arroz = new Product("Arroz", 15);
+        Product arroz = new Product("Arroz", 15f);
         Product picanha = new Product("Picanha", 10.8f);
 
         Client bruno = new Client("Bruno", "sougay123@gmail.com");
@@ -15,12 +15,10 @@ public class Main {
         carrinhodobruno.addItem(picanha);
 
         carrinhodobruno.getProducts();
-        carrinhodobruno.setTotalPrice();
         System.out.println("Preço total: " + carrinhodobruno.getTotalPrice());
 
         carrinhodobruno.removeItem(arroz);
         carrinhodobruno.getProducts();
-        carrinhodobruno.setTotalPrice();
         System.out.println("Preço total: " + carrinhodobruno.getTotalPrice());
     }
 }
